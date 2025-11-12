@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import { NavLink } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
-
+import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
 
@@ -9,7 +9,7 @@ const Navbar = () => {
     logOut()
       .then(() => {
         //
-        alert("Sign-out successful.");
+        toast.success("Logout Successfull");
       })
       .catch((error) => {
         // An error happened.
@@ -84,23 +84,20 @@ const Navbar = () => {
                   />
                   <div className="absolute bottom-0 right-0 bg-green-500 border-2 border-white w-3 h-3 rounded-full"></div>
                 </div>
-
               </div>
 
               <ul
                 tabindex="-1"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-5 mt-3 w-52 p-2 shadow"
               >
                 <li>
-                  <a class="justify-between">
-                    Profile
-                    <span class="badge">New</span>
-                  </a>
+                  <a class="justify-between">My Profile</a>
                 </li>
                 <button onClick={handleLogout}>
                   <li>
                     <a>Logout</a>
                   </li>
+                  <Toaster />
                 </button>
               </ul>
             </div>

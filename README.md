@@ -1,16 +1,62 @@
-# React + Vite
+# Cozy Winter Companion ❄️🐾
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Banner](./assets/banner.png)  
 
-Currently, two official plugins are available:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react&logoColor=white)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.3-blue?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-9.22.1-yellow?logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌟 Project Purpose
+**Cozy Winter Companion** is a cozy, winter-themed platform for pet owners. It ensures furry friends stay warm, safe, and healthy during the cold season. Users can explore:  
+- Local pet care services  
+- Winter pet clothing  
+- Grooming options  
+- Expert tips  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All in a friendly and intuitive interface.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔗 Live Demo
+[View Live Project](https://your-live-url.com)  
+
+---
+
+## 🖼️ Screenshots
+### Home Page
+![Home](./assets/home.png)  
+
+### Winter Pet Gallery
+![Gallery](./assets/gallery.png)  
+
+### Local Services
+![Services](./assets/services.png)  
+
+---
+
+## ⚡ Key Features
+- **Winter Pet Care Tips** – Expert advice to keep pets healthy and safe.  
+- **Local Services Directory** – Find nearby grooming, veterinary, and boarding services.  
+- **Pet Clothing & Accessories** – Browse warm clothes and winter gear for pets.  
+- **Interactive Gallery** – Scroll through cute winter-ready pets.  
+- **User-Friendly Interface** – Smooth navigation for pet owners of all tech levels.  
+
+---
+
+## 🛠️ Technologies & Packages Used
+- **React** – Interactive UI  
+- **Tailwind CSS** – Modern, responsive styling  
+- **React Router** – Navigation between pages  
+- **Swiper.js** – Sliders & image galleries  
+- **Firebase Authentication** – User signup/login  
+- **Firebase Firestore** – Database for users & services  
+
+---
+
+## 🚀 Installation
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/cozy-winter-companion.git

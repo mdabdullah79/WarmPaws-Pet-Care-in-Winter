@@ -1,31 +1,25 @@
-import React, { use, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { updateProfile } from "firebase/auth";
 
 const ProfilePage = () => {
-  const { user, auth } = use(AuthContext);
+  const { user, updateUser } = useContext(AuthContext);
 
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(user?.displayName || "");
   const [photo, setPhoto] = useState(user?.photoURL || "");
   const [loading, setLoading] = useState(false);
 
+  // ✅ Update profile using context method
   const handleUpdateProfile = async () => {
-    if (!auth?.currentUser) return alert("No active user found.");
-
     setLoading(true);
     try {
-      await updateProfile(auth.currentUser, {
-        displayName: name,
-        photoURL: photo,
-      });
+      await updateUser({ displayName: name, photoURL: photo });
+
       alert("✅ Profile updated successfully!");
       setIsEditing(false);
-      // Optionally, refresh user data here if your AuthContext doesn't auto-update
-      window.location.reload();
     } catch (error) {
       console.error("Profile update error:", error);
-      alert("❌ Failed to update profile: " + error.message);
+      alert("❌ Failed to update profile. Try again.");
     } finally {
       setLoading(false);
     }

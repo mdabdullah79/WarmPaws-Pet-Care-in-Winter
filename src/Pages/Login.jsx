@@ -1,12 +1,17 @@
 import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import { LuEyeOff } from "react-icons/lu";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 const Login = () => {
   const { signIn } = use(AuthContext);
   const Location = useLocation();
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
+
+  console.log(Location.state);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,11 +19,11 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    signIn(email,password)
+    signIn(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        Navigate(`${Location.state? location.state:'/'}`);
+        navigate(`${Location.state ? Location.state : "/"}`);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -26,7 +31,7 @@ const Login = () => {
         setError(errorCode);
       });
 
-    console.log({email,password});
+    console.log({ email, password });
   };
   return (
     <>
@@ -46,14 +51,23 @@ const Login = () => {
                 placeholder="Email"
                 required
               />
-              <label className="label">Password</label>
-              <input
-                name="password"
-                type="password"
-                className="input"
-                placeholder="Password"
-                required
-              />
+              <div className="relative">
+                <label className="label">Password</label>
+                <input
+                  name="password"
+                  type={show ? "text" : "password"}
+                  className="input"
+                  placeholder="Password"
+                  required
+                />
+                <span
+                  onClick={() => setShow(!show)}
+                  className="absolute  top-8 z-10 right-6"
+                >
+                  {show ? <MdOutlineRemoveRedEye /> : <LuEyeOff />}
+                </span>
+              </div>
+
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
@@ -67,7 +81,7 @@ const Login = () => {
         </form>
         <div className="flex items-center gap-2">
           <p>Don’t you have an account? </p>
-          <Link state={Location.pathname} to="/auth/signup">
+          <Link state={Location.state} to="/auth/signup">
             <button className="font-bold text-blue-500">Sign up</button>
           </Link>
         </div>

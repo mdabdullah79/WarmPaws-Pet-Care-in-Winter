@@ -11,51 +11,54 @@ import ServiceDetails from "../Pages/ServicesDeatils";
 import PrivateRoutes from "./PrivateRoutes";
 import ProfilePage from "../Pages/Profile";
 
-
-
 const router = createBrowserRouter([
-    {
-        path:'/',
-        Component:MainLayout,
-        children:[
-            {
-                index:true,
-                loader:()=>fetch("/json/servicesdata.json"),
-                Component:Home
-            },
-            {
-                path:'/services',
-                loader:()=>fetch("/json/servicesdata.json"),
-                Component:Services
-            },
-            {
-                path:'/profile',
-                Component:ProfilePage
-            }
-        ]
-    },
-    {
-        path:'/auth',
-        Component:AuthLayout,
-        children:[
-            {
-                path:'/auth/login',
-                Component:Login
-            },
-            {
-                path:'/auth/signup',
-                Component:SignUp
-            }
-        ]
-
-    },
-    {
-        path:'/service-details/:id',
-        element:(<PrivateRoutes>
-            <ServiceDetails></ServiceDetails>
-        </PrivateRoutes>),
-        loader:()=>fetch('/json/servicesdata.json'),
-    }
-])
+  {
+    path: "/",
+    Component: MainLayout,
+    children: [
+      {
+        index: true,
+        loader: () => fetch("/json/servicesdata.json"),
+        Component: Home,
+      },
+      {
+        path: "/services",
+        loader: () => fetch("/json/servicesdata.json"),
+        Component: Services,
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoutes>
+            <ProfilePage />
+          </PrivateRoutes>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "/auth/login",
+        Component: Login,
+      },
+      {
+        path: "/auth/signup",
+        Component: SignUp,
+      },
+    ],
+  },
+  {
+    path: "/service-details/:id",
+    element: (
+      <PrivateRoutes>
+        <ServiceDetails></ServiceDetails>
+      </PrivateRoutes>
+    ),
+    loader: () => fetch("/json/servicesdata.json"),
+  },
+]);
 
 export default router;
