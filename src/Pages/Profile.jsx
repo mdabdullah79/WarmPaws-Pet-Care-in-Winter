@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProfilePage = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -15,7 +16,8 @@ const ProfilePage = () => {
     try {
       await updateUser({ displayName: name, photoURL: photo });
 
-      alert("✅ Profile updated successfully!");
+
+      toast.success("Profile updated successfully!")
       setIsEditing(false);
     } catch (error) {
       console.error("Profile update error:", error);
@@ -26,17 +28,16 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-r from-blue-50 to-white px-8 md:px-20">
-      {/* Left Side: Profile Image */}
+    <div className="max-h-screen flex flex-col md:flex-row items-center mb-10">
       <div className="flex-1 flex justify-center md:justify-end mb-8 md:mb-0">
         <img
           src={photo || user?.photoURL}
           alt="User Avatar"
-          className="w-48 h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-blue-500 shadow-lg"
+          className="w-48 h-48 md:w-60 md:h-60 rounded-full object-cover border-4 border-blue-500 shadow-lg mt-5"
         />
       </div>
 
-      {/* Right Side: User Info */}
+   
       <div className="flex-1 md:pl-16 text-center md:text-left">
         {!isEditing ? (
           <>
@@ -86,7 +87,9 @@ const ProfilePage = () => {
           </div>
         )}
       </div>
+    <Toaster/>
     </div>
+
   );
 };
 

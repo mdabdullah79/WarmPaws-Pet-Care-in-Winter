@@ -47,7 +47,6 @@ const Home = () => {
       </div>
 
       <Toaster />
-      <Footer />
     </div>
   );
 };
