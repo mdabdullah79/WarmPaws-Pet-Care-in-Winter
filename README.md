@@ -28,14 +28,14 @@ All in a friendly and intuitive interface.
 ## 🖼️ Screenshots
 
 ### Login Page
-![Gallery](/assets/login.jpg) 
+![Login Page](/assets/login.jpg) 
 
 ### Home Page
-![Home](/assets/home.jpg)  
-
+![Home Page](/assets/home.jpg)  
 
 ### Local Services
-![Services](/assets/services.jpg)  
+![Local Services](/assets/services.jpg)  
+
 
 ---
 
