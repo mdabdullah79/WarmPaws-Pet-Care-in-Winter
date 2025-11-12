@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { LuEyeOff } from "react-icons/lu";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { signIn } = use(AuthContext);
@@ -24,11 +25,13 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         navigate(`${Location.state ? Location.state : "/"}`);
+        toast.success("Login Successful");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(errorCode);
+
+        setError("Invalid Email or Password");
       });
 
     console.log({ email, password });
@@ -68,11 +71,21 @@ const Login = () => {
                 </span>
               </div>
 
-              <div>
-                <a className="link link-hover">Forgot password?</a>
-              </div>
+              <a
+                className="link link-hover"
+                onClick={() =>
+                  navigate("/auth/forgot-password", {
+                    state: {
+                      email: document.querySelector('input[name="email"]')
+                        .value,
+                    },
+                  })
+                }
+              >
+                Forgot password?
+              </a>
 
-              <p className="text-red-500">{error}</p>
+              <p id="invalid" className="text-red-500">{error}</p>
               <button type="submit" className="btn btn-neutral mt-4">
                 Login
               </button>
@@ -86,6 +99,7 @@ const Login = () => {
           </Link>
         </div>
       </div>
+      <Toaster/>
     </>
   );
 };

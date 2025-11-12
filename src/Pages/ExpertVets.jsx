@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const vets = [
   {
@@ -19,9 +21,17 @@ const vets = [
 ];
 
 const ExpertVets = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <section className="bg-blue-50 py-12">
-      <div className="text-center mb-10">
+      {/* Section Header */}
+      <div className="text-center mb-10" data-aos="fade-up">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Meet Our Expert Vets
         </h2>
@@ -30,11 +40,14 @@ const ExpertVets = () => {
         </p>
       </div>
 
+      {/* Vet Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 md:px-12">
         {vets.map((vet, index) => (
           <div
             key={index}
             className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center transition-transform transform hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay={index * 200} // stagger each card
           >
             <img
               src={vet.photo}

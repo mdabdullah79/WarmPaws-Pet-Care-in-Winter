@@ -10,6 +10,7 @@ import SignUp from "../Pages/SignUp";
 import ServiceDetails from "../Pages/ServicesDeatils";
 import PrivateRoutes from "./PrivateRoutes";
 import ProfilePage from "../Pages/Profile";
+import ForgotPassword from "../Pages/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       </PrivateRoutes>
     ),
     loader: () => fetch("/json/servicesdata.json"),
+  },
+  {
+    path: "/auth/forgot-password",
+    element: <ForgotPassword />,
   },
 ]);
 

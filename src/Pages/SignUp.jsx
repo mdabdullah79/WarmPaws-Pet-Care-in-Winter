@@ -1,12 +1,15 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { LuEyeOff } from "react-icons/lu";
 
 const SignUp = () => {
   const { createUser, setUser, updateUser } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -33,12 +36,10 @@ const SignUp = () => {
             navigate(`${location.state ? location.state : "/"}`);
           })
           .catch((error) => {
-            console.error("Profile update error:", error);
             setUser(user);
           });
       })
       .catch((error) => {
-        console.error("Signup error:", error.message);
         alert("⚠️ " + error.message);
       });
   };
@@ -76,14 +77,22 @@ const SignUp = () => {
               required
             />
 
-            <label className="label">Password</label>
-            <input
-              name="password"
-              type="password"
-              className="input"
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <label className="label">Password</label>
+              <input
+                name="password"
+                type={show ? "text" : "password"}
+                className="input"
+                placeholder="Password"
+                required
+              />
+              <span
+                onClick={() => setShow(!show)}
+                className="absolute  top-8 z-10 right-6"
+              >
+                {show ? <MdOutlineRemoveRedEye /> : <LuEyeOff />}
+              </span>
+            </div>
 
             <button type="submit" className="btn btn-neutral mt-4">
               Sign Up

@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CareTips = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
-    <div className="w-11/12 mx-auto">
-    <h1 className="text-4xl font-bold mb-8 text-center">Winter Care Tips for Pets</h1>
-      <div className="flex items-center gap-5 p-3">
-        <div className="flex-1">
-          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300">
+    <div className="w-11/12 mx-auto py-16">
+      <h1
+        className="text-4xl font-bold mb-12 text-center"
+        data-aos="fade-up"
+      >
+        Winter Care Tips for Pets
+      </h1>
+
+      <div className="flex flex-col md:flex-row items-center gap-10">
+        {/* Collapses */}
+        <div className="flex-1" data-aos="fade-right">
+          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300" data-aos="fade-up" data-aos-delay="100">
             <input type="radio" name="my-accordion-2" defaultChecked />
             <div className="collapse-title font-semibold">
               Why is it important to keep pets warm during winter?
@@ -18,7 +34,8 @@ const CareTips = () => {
               comfortable.
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300">
+
+          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300" data-aos="fade-up" data-aos-delay="200">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title font-semibold">
               How often should I bathe my pet in winter?
@@ -30,7 +47,8 @@ const CareTips = () => {
               afterward.
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300">
+
+          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300" data-aos="fade-up" data-aos-delay="300">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title font-semibold">
               Can I take my pet for walks when it’s freezing outside?
@@ -41,7 +59,8 @@ const CareTips = () => {
               prevent frostbite or chemical burns.
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300">
+
+          <div className="collapse collapse-arrow bg-base-100 border mb-3 border-base-300" data-aos="fade-up" data-aos-delay="400">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title font-semibold">
               What kind of food should pets eat in cold weather?
@@ -52,7 +71,8 @@ const CareTips = () => {
               always keep fresh water available — even indoors.
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+
+          <div className="collapse collapse-arrow bg-base-100 border border-base-300" data-aos="fade-up" data-aos-delay="500">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title font-semibold">
               How can I tell if my pet is too cold?
@@ -64,11 +84,13 @@ const CareTips = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1">
+
+        {/* Image */}
+        <div className="flex-1" data-aos="fade-left">
           <img
-            className="w-[600px]"
-            src="/public/assets/winter-pet-care.jpg"
-            alt=""
+            className="w-full rounded-lg shadow-md"
+            src="/assets/winter-pet-care.jpg"
+            alt="Winter Pet Care"
           />
         </div>
       </div>

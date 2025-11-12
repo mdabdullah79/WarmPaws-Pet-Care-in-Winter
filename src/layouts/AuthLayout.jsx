@@ -6,7 +6,7 @@ const AuthLayout = () => {
   return (
     <div className="flex">
       <div className="hidden flex-1 md:block">
-        <img className="h-screen w-full" src="/public/assets/authcat.jpg" alt="" />
+        <img className="h-screen w-full" src="/assets/authcat.jpg" alt="" />
       </div>
 
       <div className="flex-1 bg-base-200 h-screen">
