@@ -8,7 +8,7 @@
     "rating": 4.9,
     "slotsAvailable": 4,
     "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
-    "image": "/public/assets/accessory.png",
+    "image": "/assets/accessory.png",
     "category": "Clothing"
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
-    "image": "/public/assets/pet-grooming.png",
+    "image": "/assets/pet-grooming.png",
     "category": "Grooming"
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.7,
     "slotsAvailable": 5,
     "description": "Installation of a cozy heated bed perfect for keeping pets warm during freezing nights.",
-    "image": "/public/assets/pet-bed.png",
+    "image": "/assets/pet-bed.png",
     "category": "Comfort"
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.9,
     "slotsAvailable": 2,
     "description": "Personalized meal planning to boost your pet’s immunity and energy during the winter season.",
-    "image": "/public/assets/nutrition.png",
+    "image": "/assets/nutrition.png",
     "category": "Nutrition"
   },
   {
@@ -56,7 +56,7 @@
     "rating": 4.6,
     "slotsAvailable": 6,
     "description": "Trained walkers ensure safe and warm outdoor walks with proper gear and timing.",
-    "image": "/public/assets/dog-walking.png",
+    "image": "/assets/dog-walking.png",
     "category": "Exercise"
   },
   {
@@ -68,7 +68,7 @@
     "rating": 5.0,
     "slotsAvailable": 3,
     "description": "Comprehensive winter wellness check to prevent seasonal illnesses and ensure your pet’s health.",
-    "image": "/public/assets/veterinary.png",
+    "image": "/assets/veterinary.png",
     "category": "Health"
   }
 ]
