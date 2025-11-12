@@ -1,4 +1,4 @@
-# Cozy Winter Companion ❄️🐾
+# WarmPaws ❄️🐾
 
 ![Project Banner](./assets/banner.png)  
 
@@ -26,14 +26,16 @@ All in a friendly and intuitive interface.
 ---
 
 ## 🖼️ Screenshots
-### Home Page
-![Home](./assets/home.png)  
 
-### Winter Pet Gallery
-![Gallery](./assets/gallery.png)  
+### Login Page
+![Gallery](./assets/login.jpg) 
+
+### Home Page
+![Home](./assets/home.jpg)  
+
 
 ### Local Services
-![Services](./assets/services.png)  
+![Services](./assets/services.jpg)  
 
 ---
 
@@ -59,4 +61,4 @@ All in a friendly and intuitive interface.
 ## 🚀 Installation
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/cozy-winter-companion.git
+   git clone https://github.com/mdabdullah79/WarmPaws-Pet-Care-in-Winter
